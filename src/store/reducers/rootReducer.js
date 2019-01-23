@@ -3,8 +3,8 @@ import projectReducer from './projectReducer'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-    auth: authReducer,
-    project: projectReducer
+    __auth: authReducer,
+    __project: projectReducer
 })
 
 export default rootReducer
