@@ -16,10 +16,14 @@ body {
   min-height: 100%;
 }
 
+nav .nav-wrapper {
+  position: relative;
+}
 .mario img {
-  display: block;
+  position: absolute;
+  display: inline-block;
   max-width: 200px important! ;
-  height: 70px ;
+  height: 80px ;
   margin-right: 100px;
   box-sizing: border-box;
 }

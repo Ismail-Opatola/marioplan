@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className='nav-wrapper grey darken-3'>
         <div className='container'>
-            <Link to='/' className='brand-logo mario material-icons'><img src={mario} alt={'mario'} /></Link>
+            <Link to='/' className='brand-logo mario circle responsive-img'><img src={mario} alt={'mario'} /></Link>
             <SignedInLinks />
             <SignedOutLinks />
         </div>
