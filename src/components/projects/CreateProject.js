@@ -42,6 +42,10 @@ class CreateProject extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+    
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         // we want to add this method to the props
