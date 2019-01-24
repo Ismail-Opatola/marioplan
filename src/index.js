@@ -13,13 +13,17 @@ import fbConfig from './config/fbConfig';
 
 const store = createStore(rootReducer, 
     compose(
-        applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
+        applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
         reduxFirestore(fbConfig),
-        reactReduxFirebase(fbConfig)
+        reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
     )
 );
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+// don't render to the dom until firebase auth is ready
+store.firebaseAuthIsReady.then(() => {
+    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+})
+
 if (module.hot) {
     module.hot.accept();
 }
