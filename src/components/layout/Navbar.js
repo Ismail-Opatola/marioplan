@@ -7,21 +7,30 @@ import { connect } from 'react-redux'
 
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+  const { auth } = props;
+
+  // console.log(auth);
+  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+
   return (
     <nav className='nav-wrapper grey darken-3'>
         <div className='container'>
             <Link to='/' className='brand-logo mario circle responsive-img'><img src={mario} alt={'mario'} /></Link>
-            <SignedInLinks />
-            <SignedOutLinks />
+            
+            { links }
+
+            {/* <SignedInLinks />
+            <SignedOutLinks /> */}
         </div>
     </nav>
   )
 }
 const mapStateToProps = (state) => {
-  console.log(state);
+  console.log(state)
   return {
-
+      auth: state.__firebase.auth
   }
 }
 
