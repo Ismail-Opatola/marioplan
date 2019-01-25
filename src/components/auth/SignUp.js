@@ -21,7 +21,7 @@ class SignUp extends Component {
     }
 
   render() {
-    const { auth } = this.props
+    const { auth, authError } = this.props
             
     // check if user not signedin redirect to signin page
     if (auth.uid) return <Redirect to='/' />
@@ -48,6 +48,10 @@ class SignUp extends Component {
             </div>
             <div className='input-feild'>
                 <button className='btn pink lighten-1 z-depth-0'>Sign up</button>
+
+                <div className='red-text center'>
+                    { authError ? <p>{ authError }</p> : null }
+                </div>
             </div>
         </form>
       </div>
