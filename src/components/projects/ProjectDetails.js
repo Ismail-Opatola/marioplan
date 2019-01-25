@@ -56,5 +56,6 @@ export default compose(
 )(ProjectDetails)
 
 // Notes on lesson #32--Firestore-Security-Rules)
+// Define who can read, create, delete, write or update 'projects, users' collection.
 // firestore auth Security Rules set on console, test simulation and Publish Security Rules
 // https://console.firebase.google.com/u/0/project/mario-plan-2dd0c/database/firestore/rules
