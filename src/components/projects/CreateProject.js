@@ -19,6 +19,9 @@ class CreateProject extends Component {
 
         // pass this.state to createProject: below in mapDispatchToProps
         this.props.createProject(this.state)
+        
+        // Redirect to dashboard
+        this.props.history.push('/');
     }
 
   render() {
