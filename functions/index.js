@@ -15,7 +15,8 @@ const createNotification = notification => {
     .firestore()
     .collection("notifications")
     .add(notification)
-    .then(doc => console.log("notification added", doc));
+    .then(doc => console.log("notification added", doc))
+    .catch(err => console.log('notification error', err));
 };
 
 // create a notification object, pass to notifications collection on creation of a new project
